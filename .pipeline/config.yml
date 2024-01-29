@@ -12,7 +12,7 @@ service:
       - name: "RELEASE_NAME"
         value: "release"
       runFirst:
-        command: "npm install octokit; node ./release.js"
+        command: "sleep 60 && ls"
 stages:
   Build:
     mavenExecuteStaticCodeChecks: false
