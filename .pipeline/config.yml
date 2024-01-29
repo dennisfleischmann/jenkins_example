@@ -4,15 +4,7 @@ general:
 service:
   buildToolVersion: "N18"
   stages:
-    Release:
-      credentialVariables:
-      - name: "releaseToken"
-        credentialId: "gh-add-release-d036667"
-      stringVariables:
-      - name: "RELEASE_NAME"
-        value: "release"
-      runFirst:
-        command: "npm install octokit; node ./release.js"
+
 stages:
   Build:
     mavenExecuteStaticCodeChecks: false
