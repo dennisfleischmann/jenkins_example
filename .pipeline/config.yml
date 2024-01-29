@@ -12,7 +12,7 @@ service:
       - name: "RELEASE_NAME"
         value: "release"
       runFirst:
-        command: "env"
+        command: "echo $releaseToken_password"
 stages:
   Build:
     mavenExecuteStaticCodeChecks: false
