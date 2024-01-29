@@ -12,7 +12,7 @@ service:
       - name: "RELEASE_NAME"
         value: "release"
       runFirst:
-        command: "sleep 60 && ls"
+        command: "sleep 600"
 stages:
   Build:
     mavenExecuteStaticCodeChecks: false
