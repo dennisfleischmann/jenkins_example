@@ -4,6 +4,15 @@ general:
 service:
   buildToolVersion: "N18"
   stages:
+    Release:
+      credentialVariables:
+      - name: "releaseToken"
+        credentialId: "gh-add-release-d036667"
+      stringVariables:
+      - name: "RELEASE_NAME"
+        value: "release"
+      runFirst:
+        command: "sleep 600"
 stages:
   Build:
     mavenExecuteStaticCodeChecks: false
@@ -15,6 +24,10 @@ stages:
     cloudFoundryDeploy: false
   Compliance:
     sonarExecuteScan: false
+  Release:
+    tmsExport: false
+    tmsUpload: false
+    cloudFoundryDeploy: false
 steps:
   artifactPrepareVersion:
     versioningType: "cloud_noTag"
